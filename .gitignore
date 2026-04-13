@@ -1,4 +1,8 @@
 
+# ── project-specific ──
+ez2-output/
+crash.log
+
 # ── GSD baseline (auto-generated) ──
 .gsd
 .gsd-id
