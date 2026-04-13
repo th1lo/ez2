@@ -4,10 +4,10 @@ Voice-to-text documentation tool for developers. Record an audio explanation, at
 
 ## What it does
 
-1. **Record** — hit `r` to start, `r` again to stop. Live audiometer shows input level.
+1. **Record** — hit `r` to start, `r` again to stop. Live audiometer shows input level with low-latency response (~16ms chunks).
 2. **Screenshot** — hit `s` mid-recording to trigger macOS region selection. The TUI suspends while you select, then resumes.
 3. **Annotate** — hit `a` mid-recording to type a note. It embeds at the current timestamp.
-4. **Transcribe** — Whisper runs locally after you stop recording (Metal GPU on Apple Silicon).
+4. **Transcribe** — Whisper runs locally after you stop recording (Metal GPU on Apple Silicon). The full transcript is displayed in the terminal when done.
 5. **Output** — `./ez2-output/YYYY-MM-DD_HH-MM/transcript.md` with a `screenshots/` folder alongside.
 
 ## Requirements

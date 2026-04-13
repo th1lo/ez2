@@ -9,6 +9,7 @@ interface AudioIOOptions {
     sampleRate: number;
     deviceId: number;
     closeOnError: boolean;
+    framesPerBuffer?: number;
   };
 }
 
@@ -25,7 +26,7 @@ export interface AudioRecorderOptions {
   onError?: (err: Error) => void;
 }
 
-const LEVEL_THROTTLE_MS = 33; // ~30fps
+const LEVEL_THROTTLE_MS = 16; // ~60fps
 
 /**
  * Wraps naudiodon AudioIO as a simple start/pause/resume/stop service.
@@ -59,6 +60,7 @@ export class AudioRecorder {
         sampleRate: this.opts.sampleRate,
         deviceId: this.opts.deviceId,
         closeOnError: false,
+        framesPerBuffer: 256, // ~16ms at 16kHz — small buffer for responsive meter
       },
     });
 

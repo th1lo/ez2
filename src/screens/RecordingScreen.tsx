@@ -29,8 +29,8 @@ const VU_FILLED = '█';
 const VU_EMPTY = '░';
 
 function buildVuBar(level: number): string {
-  // Apply a mild log scale so quiet speech still shows movement
-  const scaled = Math.min(1, Math.pow(level * 3, 0.6));
+  // Square-root curve with aggressive boost: quiet speech (~0.02 RMS) → ~40% bar
+  const scaled = Math.min(1, Math.sqrt(level * 10));
   const filled = Math.round(scaled * VU_WIDTH);
   return VU_FILLED.repeat(filled) + VU_EMPTY.repeat(VU_WIDTH - filled);
 }
@@ -323,7 +323,7 @@ export function RecordingScreen({ config, outputDir, onOpenSettings }: Recording
         </Box>
       )}
 
-      {recordState === 'TRANSCRIBED' && (
+      {(recordState === 'TRANSCRIBED' || recordState === 'ASSEMBLING' || recordState === 'ASSEMBLED') && transcription && (
         <Box flexDirection="column" gap={1}>
           <Text color="green">[✔] Transcription</Text>
           <Box borderStyle="round" borderColor="cyan" paddingX={1}>

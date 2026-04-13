@@ -25,7 +25,7 @@ const MODEL_OPTIONS: ModelOption[] = [
     label: 'Tiny',
     sizeMB: 75,
     quality: 'Fast, good enough for most use',
-    fileName: 'ggml-tiny.bin',
+    fileName: 'tiny.bin',
     url: `${BASE_URL}/ggml-tiny.bin`,
   },
   {
@@ -33,7 +33,7 @@ const MODEL_OPTIONS: ModelOption[] = [
     label: 'Base',
     sizeMB: 142,
     quality: 'Better accuracy, still quick',
-    fileName: 'ggml-base.bin',
+    fileName: 'base.bin',
     url: `${BASE_URL}/ggml-base.bin`,
   },
   {
@@ -41,7 +41,7 @@ const MODEL_OPTIONS: ModelOption[] = [
     label: 'Small',
     sizeMB: 466,
     quality: 'High accuracy, slower on older machines',
-    fileName: 'ggml-small.bin',
+    fileName: 'small.bin',
     url: `${BASE_URL}/ggml-small.bin`,
   },
 ];
