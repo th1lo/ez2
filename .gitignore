@@ -32,3 +32,13 @@ vendor/
 coverage/
 .cache/
 tmp/
+
+# agent runtime junk
+.gsd/quarantine/
+.gsd-backups/
+.gsd/activity/
+.gsd/runtime/
+.gsd/*.db*
+.gsd/*.jsonl
+.gsd/audit/
+.bg-shell/
